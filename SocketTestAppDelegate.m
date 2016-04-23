@@ -20,8 +20,12 @@
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
-	NSLog(@"Welcome");
+	[window setReleasedWhenClosed:NO];
+}
+
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag{
+    [window setIsVisible:YES];
+    return YES;
 }
 
 - (id)init
